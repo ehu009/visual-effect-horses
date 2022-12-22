@@ -2,6 +2,20 @@
 function forceTest() {
 }
 
+function applyAnimation(horse, animation) {
+    horse.node.style.animation = animation;
+    horse.node.style.WebkitAnimation = animation;
+
+    function kill() {
+        horse.node.remove();
+        delete horse;
+    }
+    horse.node.addEventListener("animationend", kill);
+    horse.node.addEventListener("webkitAnimationEnd", kill);
+}
+
+
+
 class Horse {
     // a horse racing across the screen
  
