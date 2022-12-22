@@ -19,7 +19,7 @@ function applyAnimation(horse, animation) {
 class Horse {
     // a horse racing across the screen
  
-    constructor(id, xPos, yPos, scale, rotation, xDirection, yDirection, xSpeed, ySpeed) {
+    constructor(id, xPos, yPos, scale, rotation, xDirection, yDirection) {
         this.id = id;
         this.x = xPos;
         this.y = yPos;
@@ -27,8 +27,6 @@ class Horse {
         this.r = rotation;
         this.xd = xDirection;
         this.yd = yDirection;
-        this.xv = xSpeed;
-        this.yv = ySpeed;
         this.node = null;
     }
     
@@ -45,8 +43,6 @@ class Horse {
         img.style.height = "auto";
         img.style.width = 150 * (this.s/100) + "px";
         
-        //horf.style.width = +"";
-
         img.classList.add("horse");
         
         if (this.xd > 0) {
@@ -55,6 +51,7 @@ class Horse {
         if (0 > this.yd) {
             img.classList.add("flipY");
         }
+
         document.getElementById("container").appendChild(img);
         this.node = img;
         this.reposition();
