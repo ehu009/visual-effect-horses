@@ -34,6 +34,15 @@ class Horse {
         this.node.style.left = this.x;
         this.node.style.top = this.y;
     }
+    
+    flip() {
+        if (this.xd > 0) {
+            this.node.classList.add("flipX");
+        }
+        if (0 > this.yd) {
+            this.node.classList.add("flipY");
+        }
+    }
 
     spawn() {
         let img = document.createElement("img");
@@ -44,17 +53,11 @@ class Horse {
         img.style.width = 150 * (this.s/100) + "px";
         
         img.classList.add("horse");
-        
-        if (this.xd > 0) {
-            img.classList.add("flipX");
-        }
-        if (0 > this.yd) {
-            img.classList.add("flipY");
-        }
 
         document.getElementById("container").appendChild(img);
         this.node = img;
         this.reposition();
+        this.flip();
         
     }
 }
