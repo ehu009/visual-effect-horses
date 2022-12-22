@@ -20,6 +20,14 @@ class Horse {
     // a horse racing across the screen
  
     constructor(id, xPos, yPos, scale, rotated, xDirection, yDirection) {
+        /*
+        PARAMETERS
+        id, xPos, yPos : self-explanatory
+        scale: ---tbd---
+        rotated: true if rotated 90 degrees clockwise, otherwise false
+        xDirection : negative if pointing leftwards, positive if pointing rightwards
+        yDirection : negative if pointing upwards, positive if pointing downwards
+        */
         this.id = id;
         this.x = xPos;
         this.y = yPos;
