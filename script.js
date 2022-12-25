@@ -1,10 +1,12 @@
-const imageWidth = 150;
+
+const imagePath = "horse.png";
+const imageWidth = 270;
 
 const minDuration = 3;
 const maxDuration = 10;
 
-const minScale = 70;
-const maxScale = 125;
+const minScale = 40;
+const maxScale = 80;
 
 
 function randomHorse() {
@@ -167,7 +169,7 @@ class Horse {
     spawn() {
         let div = document.createElement("div");
         let img = document.createElement("img");
-        img.src = "example.jpg";
+        img.src = imagePath;
        
         div.classList.add("horse");
 
