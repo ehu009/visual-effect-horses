@@ -5,15 +5,16 @@ function forceTest() {
 }
 
 function applyAnimation(horse) {
-    horse.node.style.animation = horse.animation;
-    horse.node.style.WebkitAnimation = horse.animation;
+    horse.box.style.animation = horse.animation;
+    horse.box.style.WebkitAnimation = horse.animation;
 
     function kill() {
         horse.node.remove();
+        horse.box.remove();
         delete horse;
     }
-    horse.node.addEventListener("animationend", kill);
-    horse.node.addEventListener("webkitAnimationEnd", kill);
+    horse.box.addEventListener("animationend", kill);
+    horse.box.addEventListener("webkitAnimationEnd", kill);
 }
 
 
@@ -38,6 +39,7 @@ class Horse {
         this.yd = yDirection;
         this.t = duration;
         this.node = null;
+        this.box = null;
     }
     
     reposition() {
@@ -66,19 +68,20 @@ class Horse {
     }
 
     spawn() {
+        let div = document.createElement("div");
         let img = document.createElement("img");
         img.src = "example.jpg";
-        img.id = this.id;
        
-        img.classList.add("horse");
+        div.classList.add("horse");
 
-        document.getElementById("container").appendChild(img);
+        div.appendChild(img);
+        document.getElementById("container").appendChild(div);
         this.node = img;
-        this.reposition();
+        this.box = div;
+
         this.rescale();
         this.flip();
-        this.rotate();
-
+        this.reposition();
     }
        
     get animation() {
@@ -89,7 +92,6 @@ class Horse {
             } else {
                 s += "rightwards";
             }
-
         } else if (this.yd != 0) {
             if (this.yd < 0) {
                 s += "upwards";
