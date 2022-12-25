@@ -1,4 +1,6 @@
 
+var imageWidth = 150;
+
 function forceTest() {
 }
 
@@ -52,22 +54,30 @@ class Horse {
         }
     }
 
+    rotate() {
+        if (this.r == true) {
+            this.node.classList.add("rotate90");
+        }
+    }
 
+    rescale() {
+        this.node.style.height = "auto";
+        this.node.style.width = imageWidth * (this.s/100) + "px";
+    }
 
     spawn() {
         let img = document.createElement("img");
         img.src = "example.jpg";
         img.id = this.id;
-
-        img.style.height = "auto";
-        img.style.width = 150 * (this.s/100) + "px";
-        
+       
         img.classList.add("horse");
 
         document.getElementById("container").appendChild(img);
         this.node = img;
         this.reposition();
+        this.rescale();
         this.flip();
+        this.rotate();
         
     }
 }
