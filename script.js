@@ -21,7 +21,7 @@ function applyAnimation(horse, animation) {
 class Horse {
     // a horse racing across the screen
  
-    constructor(id, xPos, yPos, scale, rotated, xDirection, yDirection) {
+    constructor(id, xPos, yPos, scale, rotated, xDirection, yDirection, duration) {
         /*
         PARAMETERS
         id, xPos, yPos : self-explanatory
@@ -37,6 +37,7 @@ class Horse {
         this.r = rotated;
         this.xd = xDirection;
         this.yd = yDirection;
+        this.t = duration;
         this.node = null;
     }
     
@@ -79,5 +80,5 @@ class Horse {
         this.flip();
         this.rotate();
         
-    }
+    }   
 }
