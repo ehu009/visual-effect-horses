@@ -1,7 +1,67 @@
+const imageWidth = 150;
 
-var imageWidth = 150;
+const minDuration = 3;
+const maxDuration = 10;
+
+const minScale = 70;
+const maxScale = 125;
+
 
 function forceTest() {
+}
+
+function randomHorse() {
+    let xdir = 0;
+    let ydir = 0;
+
+    let xpos = 0;
+    let ypos = 0;
+
+    let r = Math.random()*100;
+    if (r >= 50) {
+        // horizontal movement
+        r = Math.random()*100;
+        if (r >= 50) {
+            // top
+            ypos = -1;
+        } else {
+            // bottom
+            ypos = 1;
+        }
+        r = Math.random()*100;
+        if (r >= 50) {
+            // rightwards
+            xdir = -1;
+        } else {
+            // leftwards
+            xdir = 1;
+        }
+
+    } else {
+        //vertical movement
+        r = Math.random()*100;
+        if (r >= 50) {
+            // right
+            xpos = -1;
+        } else {
+            // left
+            xpos = 1;
+        }
+        r = Math.random()*100;
+        if (r >= 50) {
+            // upwards
+            ydir = -1;
+        } else {
+            // downwards
+            ydir = 1;
+        }
+    }
+    let duration = (Math.random()*(maxDuration-minDuration)) + minDuration;
+    let scale = (Math.random()*(maxScale-minScale)) + minScale;
+
+    let h = new Horse(xpos, ypos, scale, xdir, ydir, duration);
+    h.spawn();
+    applyAnimation(h);
 }
 
 function applyAnimation(horse) {
