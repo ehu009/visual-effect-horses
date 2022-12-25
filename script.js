@@ -141,6 +141,7 @@ class Horse {
         }
         s += " " + this.t + "s";
         s += " " + "linear";
+        return s;
     }
  
 }
