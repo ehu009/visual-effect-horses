@@ -1,6 +1,20 @@
 <html>
 <head>
     <script src="script.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        const horseProbability = 25;
+        
+        function addHorse () {
+            let dice = Math.random()*100;
+            if (dice < horseProbability) {
+                randomHorse();
+            }
+        }
+
+        const decisionInterval = 1000;
+
+    </script>
     <style type="text/css">
         html, body {
             overflow: hidden;
@@ -48,7 +62,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="setInterval(addHorse, decisionInterval);">
     
     <div id="container"></div>
 
