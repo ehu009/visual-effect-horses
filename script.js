@@ -7,9 +7,6 @@ const minScale = 70;
 const maxScale = 125;
 
 
-function forceTest() {
-}
-
 function randomHorse() {
     let xdir = 0;
     let ydir = 0;
