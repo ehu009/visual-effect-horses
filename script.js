@@ -4,9 +4,9 @@ var imageWidth = 150;
 function forceTest() {
 }
 
-function applyAnimation(horse, animation) {
-    horse.node.style.animation = animation;
-    horse.node.style.WebkitAnimation = animation;
+function applyAnimation(horse) {
+    horse.node.style.animation = horse.animation;
+    horse.node.style.WebkitAnimation = horse.animation;
 
     function kill() {
         horse.node.remove();
@@ -78,6 +78,27 @@ class Horse {
         this.rescale();
         this.flip();
         this.rotate();
-               
-    }   
+
+    }
+       
+    get animation() {
+        var s = "";
+        if (this.xd != 0) {
+            if (this.xd < 0) {
+                s += "leftwards";
+            } else {
+                s += "rightwards";
+            }
+
+        } else if (this.yd != 0) {
+            if (this.yd < 0) {
+                s += "upwards";
+            } else {
+                s += "downwards";
+            }
+        }
+        s += " " + this.t + "s";
+        s += " " + "linear";
+    }
+ 
 }
