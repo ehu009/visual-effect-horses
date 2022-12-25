@@ -22,19 +22,18 @@ function applyAnimation(horse) {
 class Horse {
     // a horse racing across the screen
  
-    constructor(id, xPos, yPos, scale, xDirection, yDirection, duration) {
+    constructor(xPos, yPos, scale, xDirection, yDirection, duration) {
         /*
         PARAMETERS
-        id, xPos, yPos : self-explanatory
+        xPos : negative if left side, positive if right side
+        yPos : negative if on top, positive if on bottom
         scale: percentage of original image size
         xDirection : negative if pointing leftwards, positive if pointing rightwards
         yDirection : negative if pointing upwards, positive if pointing downwards
         */
-        this.id = id;
         this.x = xPos;
         this.y = yPos;
         this.s = scale;
-        this.r = undefined;
         this.xd = xDirection;
         this.yd = yDirection;
         this.t = duration;
@@ -56,11 +55,6 @@ class Horse {
         }
     }
 
-    rotate() {
-        if (this.r == true) {
-            this.node.classList.add("rotate90");
-        }
-    }
 
     rescale() {
         this.node.style.height = "auto";
