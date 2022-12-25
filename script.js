@@ -1,12 +1,12 @@
 
-const imagePath = "horse.png";
-const imageWidth = 270;
+const imagePath = "horse.png";  //  path to image
+const imageWidth = 270;         //  width of original image
 
-const minDuration = 3;
-const maxDuration = 10;
+const minDuration = 3;          //  minimum animation duration
+const maxDuration = 10;         //  maximum animation duration
 
-const minScale = 40;
-const maxScale = 80;
+const minScale = 40;            //  minimum image scale
+const maxScale = 80;            //  maximum image scale
 
 
 function randomHorse() {
