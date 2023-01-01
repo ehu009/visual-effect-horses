@@ -48,12 +48,21 @@ class Horse {
         // positions the horse outside window bounds
         let x = 0;
         let y = 0;
-        if (this.x > 0) {
-            x = window.innerWidth - this.node.width;
+        
+        if (this.yd != 0) {
+            if (this.x > 0) {
+                x = window.innerWidth - ((this.node.height/2) + (this.node.width/2));
+            } else if (this.x < 0) {
+                x = (this.node.height/2) - (this.node.width/2);
+            }
+        } else if (this.xd != 0) {
+            if (this.y > 0) {
+                y = window.innerHeight - this.node.height;
+            } else if (this.y < 0) {
+                // do nothing
+            }
         }
-        if (this.y > 0) {
-            y = window.innerHeight - this.node.height;
-        }
+
         this.box.style.left = x;
         this.box.style.top = y;
 
