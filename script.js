@@ -1,7 +1,6 @@
 
 // image and animation parametres
 const imagePath = "horse.png";  //  path to image
-const imageWidth = 270;         //  width of original image
 
 const minDuration = 3;          //  minimum animation duration (seconds)
 const maxDuration = 10;         //  maximum animation duration (seconds)
@@ -123,7 +122,7 @@ class Horse {
 
         // scales the image, provided original width is specified
         this.node.style.height = "auto";
-        this.node.style.width = imageWidth * (this.s/100) + "px";
+        this.node.width *=  (this.s/100);
 
     }
 

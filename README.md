@@ -7,7 +7,6 @@ Assumes the image used is facing leftwards.
 Parametres regarding image and animation can be set in the `script.js` file:
 ```javascript
 const imagePath = "horse.png";  //  path to image file
-const imageWidth = 270;         //  width of original image (pixels)
 
 const minDuration = 3;          //  minimum animation duration (seconds)
 const maxDuration = 10;         //  maximum animation duration (seconds)
